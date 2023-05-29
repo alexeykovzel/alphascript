@@ -1,32 +1,101 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "AlphaScript",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.alphascript",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.alphascript",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.alphascript",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.as"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "AlphaScript",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#braces"
+        },
+        {
+            "include": "#symbols"
+        },
+        {
+            "include": "#identifiers"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#strings"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.alphascript",
+                    "match": "\\b(fun|let|while|return)\\b"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "support.type.alphascript",
+                    "match": "\\bInt\\b"
+                }
+            ]
+        },
+        "braces": {
+            "patterns": [
+                {
+                    "name": "punctuation.brace.round.alphascript",
+                    "match": "[\\(\\)]"
+                },
+                {
+                    "name": "punctuation.brace.curly.alphascript",
+                    "match": "[\\{\\}]"
+                }
+            ]
+        },
+        "symbols": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.symbol.alphascript",
+                    "match": "->"
+                },
+                {
+                    "name": "keyword.operator.assignment.alphascript",
+                    "match": "="
+                }
+            ]
+        },
+        "identifiers": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.alphascript",
+                    "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b(?=\\s*\\()"
+                },
+                {
+                    "name": "variable.other.alphascript",
+                    "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.alphascript",
+                    "match": "\\b[0-9]+\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.alphascript",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.alphascript",
+                    "match": "\\\\\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "source.as"
 }

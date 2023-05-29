@@ -1,9 +1,10 @@
 {
   "name": "alphascript",
-  "displayName": "AlphaScript Syntax Highlighting",
+  "displayName": "AlphaScript Syntax",
   "description": "Syntax Highlighting for the AlphaScript programming language",
   "publisher": "alphascript",
-  "version": "0.0.1",
+  "icon": "images/icon.png",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.78.0"
   },
